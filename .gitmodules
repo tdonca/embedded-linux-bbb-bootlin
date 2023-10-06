@@ -1,0 +1,3 @@
+[submodule "toolchain/crosstool-ng"]
+	path = toolchain/crosstool-ng
+	url = https://github.com/crosstool-ng/crosstool-ng
