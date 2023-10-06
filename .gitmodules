@@ -1,3 +1,6 @@
 [submodule "toolchain/crosstool-ng"]
 	path = toolchain/crosstool-ng
 	url = https://github.com/crosstool-ng/crosstool-ng
+[submodule "bootloader/u-boot"]
+	path = bootloader/u-boot
+	url = https://gitlab.denx.de/u-boot/u-boot
