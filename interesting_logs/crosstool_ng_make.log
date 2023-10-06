@@ -1,0 +1,44 @@
+tudor@tudor-XPS-15-9500:~/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng$ make
+/usr/bin/make  all-recursive
+make[1]: Entering directory '/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng'
+Making all in kconfig
+make[2]: Entering directory '/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng/kconfig'
+  LEX      lexer.lex.c
+  YACC     parser.tab.c
+/usr/bin/make  all-am
+make[3]: Entering directory '/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng/kconfig'
+  CC       conf.o
+  CC       confdata.o
+  CC       expr.o
+  CC       symbol.o
+  CC       preprocess.o
+  CC       util.o
+  CC       parser.tab.o
+  CC       lexer.lex.o
+  CCLD     conf
+  CC       nconf-nconf.o
+  CC       nconf-nconf.gui.o
+  CC       nconf-confdata.o
+  CC       nconf-expr.o
+  CC       nconf-symbol.o
+  CC       nconf-preprocess.o
+  CC       nconf-util.o
+  CC       nconf-parser.tab.o
+  CC       nconf-lexer.lex.o
+  CCLD     nconf
+  CC       mconf.o
+  CC       lxdialog/checklist.o
+  CC       lxdialog/inputbox.o
+  CC       lxdialog/menubox.o
+  CC       lxdialog/textbox.o
+  CC       lxdialog/util.o
+  CC       lxdialog/yesno.o
+  CCLD     mconf
+make[3]: Leaving directory '/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng/kconfig'
+make[2]: Leaving directory '/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng/kconfig'
+make[2]: Entering directory '/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng'
+  GEN      ct-ng
+  GEN      bash-completion/ct-ng
+  GEN      docs/ct-ng.1
+make[2]: Leaving directory '/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng'
+make[1]: Leaving directory '/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng'

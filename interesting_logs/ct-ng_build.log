@@ -1,0 +1,200 @@
+tudor@tudor-XPS-15-9500:~/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng$ ./ct-ng build
+[INFO ]  Performing some trivial sanity checks
+[INFO ]  Build started 20231005.164543
+[INFO ]  Building environment variables
+[WARN ]  Directory '/home/tudor/src' does not exist.
+[WARN ]  Will not save downloaded tarballs to local storage.
+[EXTRA]  Preparing working directories
+[EXTRA]  Installing user-supplied crosstool-NG configuration
+[EXTRA]  =================================================================
+[EXTRA]  Dumping internal crosstool-NG configuration
+[EXTRA]    Building a toolchain for:
+[EXTRA]      build  = x86_64-pc-linux-gnu
+[EXTRA]      host   = x86_64-pc-linux-gnu
+[EXTRA]      target = arm-training-linux-musleabihf
+[EXTRA]  Dumping internal crosstool-NG configuration: done in 0.06s (at 00:01)
+[INFO ]  =================================================================
+[INFO ]  Retrieving needed toolchain components' tarballs
+[EXTRA]    Retrieving 'autoconf-2.71'
+[EXTRA]    Verifying SHA512 checksum for 'autoconf-2.71.tar.xz'
+[EXTRA]    Retrieving 'automake-1.16.5'
+[EXTRA]    Verifying SHA512 checksum for 'automake-1.16.5.tar.xz'
+[EXTRA]    Retrieving 'linux-6.1.25'
+[EXTRA]    Verifying SHA512 checksum for 'linux-6.1.25.tar.xz'
+[EXTRA]    Retrieving 'zlib-1.2.13'
+[EXTRA]    Verifying SHA512 checksum for 'zlib-1.2.13.tar.xz'
+[EXTRA]    Retrieving 'zstd-1.5.5'
+[EXTRA]    Verifying SHA512 checksum for 'zstd-1.5.5.tar.gz'
+[EXTRA]    Retrieving 'gmp-6.2.1'
+[EXTRA]    Verifying SHA512 checksum for 'gmp-6.2.1.tar.xz'
+[EXTRA]    Retrieving 'mpfr-4.1.0'
+[EXTRA]    Verifying SHA512 checksum for 'mpfr-4.1.0.tar.xz'
+[EXTRA]    Retrieving 'isl-0.26'
+[EXTRA]    Verifying SHA512 checksum for 'isl-0.26.tar.xz'
+[EXTRA]    Retrieving 'mpc-1.2.1'
+[EXTRA]    Verifying SHA512 checksum for 'mpc-1.2.1.tar.gz'
+[EXTRA]    Retrieving 'ncurses-6.4'
+[EXTRA]    Verifying SHA512 checksum for 'ncurses-6.4.tar.gz'
+[EXTRA]    Retrieving 'libiconv-1.16'
+[EXTRA]    Verifying SHA512 checksum for 'libiconv-1.16.tar.gz'
+[EXTRA]    Retrieving 'gettext-0.21'
+[EXTRA]    Verifying SHA512 checksum for 'gettext-0.21.tar.xz'
+[EXTRA]    Retrieving 'binutils-2.40'
+[EXTRA]    Verifying SHA512 checksum for 'binutils-2.40.tar.xz'
+[EXTRA]    Retrieving 'gcc-12.3.0'
+[EXTRA]    Verifying SHA512 checksum for 'gcc-12.3.0.tar.xz'
+[EXTRA]    Retrieving 'musl-1.2.4'
+[EXTRA]    Verifying SHA512 checksum for 'musl-1.2.4.tar.gz'
+[INFO ]  Retrieving needed toolchain components' tarballs: done in 77.50s (at 01:19)
+[INFO ]  =================================================================
+[INFO ]  Extracting and patching toolchain components
+[EXTRA]    Extracting autoconf-2.71
+[EXTRA]    Patching autoconf-2.71
+[EXTRA]    Extracting automake-1.16.5
+[EXTRA]    Patching automake-1.16.5
+[EXTRA]    Extracting linux-6.1.25
+[EXTRA]    Patching linux-6.1.25
+[EXTRA]    Extracting zlib-1.2.13
+[EXTRA]    Patching zlib-1.2.13
+[EXTRA]    Extracting zstd-1.5.5
+[EXTRA]    Patching zstd-1.5.5
+[EXTRA]    Extracting gmp-6.2.1
+[EXTRA]    Patching gmp-6.2.1
+[EXTRA]    Extracting mpfr-4.1.0
+[EXTRA]    Patching mpfr-4.1.0
+[EXTRA]    Extracting isl-0.26
+[EXTRA]    Patching isl-0.26
+[EXTRA]    Extracting mpc-1.2.1
+[EXTRA]    Patching mpc-1.2.1
+[EXTRA]    Extracting ncurses-6.4
+[EXTRA]    Patching ncurses-6.4
+[EXTRA]    Extracting libiconv-1.16
+[EXTRA]    Patching libiconv-1.16
+[EXTRA]    Extracting gettext-0.21
+[EXTRA]    Patching gettext-0.21
+[EXTRA]    Extracting binutils-2.40
+[EXTRA]    Patching binutils-2.40
+[EXTRA]    Extracting gcc-12.3.0
+[EXTRA]    Patching gcc-12.3.0
+[EXTRA]    Extracting musl-1.2.4
+[EXTRA]    Patching musl-1.2.4
+[INFO ]  Extracting and patching toolchain components: done in 31.69s (at 01:51)
+[INFO ]  =================================================================
+[INFO ]  Installing autoconf for build
+[EXTRA]    Configuring autoconf
+[EXTRA]    Building autoconf
+[EXTRA]    Installing autoconf
+[INFO ]  Installing autoconf for build: done in 2.27s (at 01:53)
+[INFO ]  =================================================================
+[INFO ]  Installing automake for build
+[EXTRA]    Configuring automake
+[EXTRA]    Building automake
+[EXTRA]    Installing automake
+[INFO ]  Installing automake for build: done in 2.16s (at 01:55)
+[INFO ]  =================================================================
+[INFO ]  Installing ncurses for build
+[EXTRA]    Configuring ncurses
+[EXTRA]    Building ncurses
+[EXTRA]    Installing ncurses
+[INFO ]  Installing ncurses for build: done in 18.31s (at 02:13)
+[INFO ]  =================================================================
+[INFO ]  Installing zlib for host
+[EXTRA]    Configuring zlib
+[EXTRA]    Building zlib
+[EXTRA]    Installing zlib
+[INFO ]  Installing zlib for host: done in 0.94s (at 02:14)
+[INFO ]  =================================================================
+[INFO ]  Installing zstd for host
+[EXTRA]    Building zstd
+[EXTRA]    Installing zstd
+[INFO ]  Installing zstd for host: done in 9.62s (at 02:24)
+[INFO ]  =================================================================
+[INFO ]  Installing GMP for host
+[EXTRA]    Configuring GMP
+[EXTRA]    Building GMP
+[EXTRA]    Installing GMP
+[INFO ]  Installing GMP for host: done in 22.51s (at 02:46)
+[INFO ]  =================================================================
+[INFO ]  Installing MPFR for host
+[EXTRA]    Configuring MPFR
+[EXTRA]    Building MPFR
+[EXTRA]    Installing MPFR
+[INFO ]  Installing MPFR for host: done in 11.25s (at 02:58)
+[INFO ]  =================================================================
+[INFO ]  Installing ISL for host
+[EXTRA]    Configuring ISL
+[EXTRA]    Building ISL
+[EXTRA]    Installing ISL
+[INFO ]  Installing ISL for host: done in 19.41s (at 03:17)
+[INFO ]  =================================================================
+[INFO ]  Installing MPC for host
+[EXTRA]    Configuring MPC
+[EXTRA]    Building MPC
+[EXTRA]    Installing MPC
+[INFO ]  Installing MPC for host: done in 4.08s (at 03:21)
+[INFO ]  =================================================================
+[INFO ]  Installing ncurses for host
+[EXTRA]    Configuring ncurses
+[EXTRA]    Building ncurses
+[EXTRA]    Installing ncurses
+[INFO ]  Installing ncurses for host: done in 17.77s (at 03:39)
+[INFO ]  =================================================================
+[INFO ]  Installing libiconv for host
+[EXTRA]    Skipping (included in GNU C library)
+[INFO ]  Installing libiconv for host: done in 0.00s (at 03:39)
+[INFO ]  =================================================================
+[INFO ]  Installing gettext for host
+[EXTRA]    Skipping (included in GNU C library)
+[INFO ]  Installing gettext for host: done in 0.00s (at 03:39)
+[INFO ]  =================================================================
+[INFO ]  Installing binutils for host
+[EXTRA]    Configuring binutils
+[EXTRA]    Building binutils
+[EXTRA]    Installing binutils
+[EXTRA]    Installing ld wrapper
+[INFO ]  Installing binutils for host: done in 112.37s (at 05:31)
+[INFO ]  =================================================================
+[INFO ]  Installing kernel headers
+[EXTRA]    Installing kernel headers
+[INFO ]  Installing kernel headers: done in 10.85s (at 05:42)
+[INFO ]  =================================================================
+[INFO ]  Installing core C gcc compiler
+[EXTRA]    Configuring core C gcc compiler
+[EXTRA]    Building gcc
+[EXTRA]    Installing gcc
+[EXTRA]    Housekeeping for core gcc compiler
+[EXTRA]       '' --> lib (gcc)   lib (os)
+[INFO ]  Installing core C gcc compiler: done in 347.10s (at 11:29)
+[INFO ]  =================================================================
+[INFO ]  Installing C library
+[INFO ]    =================================================================
+[INFO ]    Building for multilib 1/1: ''
+[EXTRA]      Building C library
+[EXTRA]      Installing C library
+[INFO ]    Building for multilib 1/1: '': done in 12.70s (at 11:42)
+[INFO ]  Installing C library: done in 12.80s (at 11:42)
+[INFO ]  =================================================================
+[INFO ]  Installing final gcc compiler
+[EXTRA]    Configuring final gcc compiler
+[EXTRA]    Building final gcc compiler
+[EXTRA]    Installing final gcc compiler
+[EXTRA]    Housekeeping for final gcc compiler
+[EXTRA]       '' --> lib (gcc)   lib (os)
+[INFO ]  Installing final gcc compiler: done in 377.53s (at 18:00)
+[INFO ]  =================================================================
+[INFO ]  Checking dynamic linker symlinks
+[EXTRA]    Checking dynamic linker for multilib ''
+[INFO ]  Checking dynamic linker symlinks: done in 0.08s (at 18:00)
+[INFO ]  =================================================================
+[INFO ]  Finalizing the toolchain's directory
+[INFO ]    Stripping all toolchain executables
+[EXTRA]    Installing the populate helper
+[EXTRA]    Installing a cross-ldd helper
+[EXTRA]    Creating toolchain aliases
+[EXTRA]    Removing installed documentation
+[EXTRA]    Collect license information from: /home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain/crosstool-ng/.build/arm-training-linux-musleabihf/src
+[EXTRA]    Put the license information to: /home/tudor/x-tools/arm-training-linux-musleabihf/share/licenses
+[INFO ]  Finalizing the toolchain's directory: done in 3.06s (at 18:03)
+[INFO ]  Build completed at 20231005.170345
+[INFO ]  (elapsed: 18:02.24)
+[INFO ]  Finishing installation (may take a few seconds)...
