@@ -4,3 +4,6 @@
 [submodule "bootloader/u-boot"]
 	path = bootloader/u-boot
 	url = https://gitlab.denx.de/u-boot/u-boot
+[submodule "kernel/linux"]
+	path = kernel/linux
+	url = https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
