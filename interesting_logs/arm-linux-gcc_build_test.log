@@ -1,5 +1,0 @@
-tudor@tudor-XPS-15-9500:~/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain$ arm-linux-gcc -o hello hello.c
-tudor@tudor-XPS-15-9500:~/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain$ ls
-crosstool-ng  hello  hello.c
-tudor@tudor-XPS-15-9500:~/dev/embedded_linux/embedded-linux-bbb-bootlin/toolchain$ file hello
-hello: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-musl-armhf.so.1, not stripped
