@@ -46,3 +46,22 @@ Using sample `arm-cortex_a8-linux-gnueabi`
 
 Toolchain installed at `$HOME/x-tools/arm-training-linux-musleabihf/bin/`
 export PATH="${HOME}/x-tools/arm-training-linux-musleabihf/bin/:${PATH}"
+
+## U-Boot
+
+## Linux Kernel
+- Kernel stable git repo: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/
+- Kernel source browser: https://elixir.bootlin.com/linux/latest/source
+- Configuration for beagle bone black: `omap2plus_defconfig`
+- TI OMAP: https://en.wikipedia.org/wiki/OMAP
+
+Successful kernel load: :)
+```
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 6.1.57 (tudor@tudor-XPS-15-9500) (arm-linux-gcc (crosstool-NG 1.25.0.199_36ad0b1) 12.3.0, GNU ld (crosstool-NG 1.25.0.199_36ad0b1) 2.40) #1 SMP Thu Oct 12 18:02:16 PDT 2023
+[    0.000000] CPU: ARMv7 Processor [413fc082] revision 2 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: TI AM335x BeagleBone Black
+```

@@ -8,3 +8,6 @@ export PATH=${HOME}/x-tools/arm-training-linux-musleabihf/bin/:${PATH}
 
 # Load cross-compile prefix for our toolchain, based on our crosstool-ng configuration
 export CROSS_COMPILE=arm-linux-
+
+# Load target architecture for the kernel build
+export ARCH=arm

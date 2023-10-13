@@ -1,0 +1,67 @@
+=> 
+---- Sent utf8 encoded message: "bootz 0x81000000 - 0x82000000\n" ----
+bootz 0x81000000 - 0x82000000
+Kernel image @ 0x81000000 [ 0x000000 - 0x4ed4d0 ]
+## Flattened Device Tree blob at 82000000
+   Booting using the fdt blob at 0x82000000
+Working FDT set to 82000000
+   Loading Device Tree to 8ffeb000, end 8ffff130 ... OK
+Working FDT set to 8ffeb000
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 6.1.57 (tudor@tudor-XPS-15-9500) (arm-linux-gcc (crosstool-NG 1.25.0.199_36ad0b1) 12.3.0, GNU ld (crosstool-NG 1.25.0.199_36ad0b1) 2.40) #1 SMP Thu Oct 12 18:02:16 PDT 2023
+[    0.000000] CPU: ARMv7 Processor [413fc082] revision 2 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: TI AM335x BeagleBone Black
+[    0.000000] Memory policy: Data cache writeback
+[    0.000000] cma: Reserved 16 MiB at 0x9e800000
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000080000000-0x000000009fdfffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000080000000-0x000000009fdfffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000080000000-0x000000009fdfffff]
+[    0.000000] CPU: All CPU(s) started in SVC mode.
+[    0.000000] AM335X ES2.1 (sgx neon)
+...
+...
+[    2.632700] /dev/root: Can't open blockdev
+[    2.636996] VFS: Cannot open root device "(null)" or unknown-block(0,0): error -6
+[    2.644520] Please append a correct "root=" boot option; here are the available partitions:
+[    2.652948] 0100           16384 ram0 
+[    2.652959]  (driver?)
+[    2.659113] 0101           16384 ram1 
+[    2.659121]  (driver?)
+[    2.665247] 0102           16384 ram2 
+[    2.665254]  (driver?)
+[    2.671421] 0103           16384 ram3 
+[    2.671429]  (driver?)
+[    2.677582] 0104           16384 ram4 
+[    2.677590]  (driver?)
+[    2.683717] 0105           16384 ram5 
+[    2.683724]  (driver?)
+[    2.689876] 0106           16384 ram6 
+[    2.689885]  (driver?)
+[    2.696031] 0107           16384 ram7 
+[    2.696039]  (driver?)
+[    2.702164] 0108           16384 ram8 
+[    2.702172]  (driver?)
+[    2.708318] 0109           16384 ram9 
+[    2.708326]  (driver?)
+[    2.714452] 010a           16384 ram10 
+[    2.714460]  (driver?)
+[    2.720694] 010b           16384 ram11 
+[    2.720702]  (driver?)
+[    2.726934] 010c           16384 ram12 
+[    2.726942]  (driver?)
+[    2.733157] 010d           16384 ram13 
+[    2.733164]  (driver?)
+[    2.739398] 010e           16384 ram14 
+[    2.739406]  (driver?)
+[    2.745646] 010f           16384 ram15 
+[    2.745655]  (driver?)
+[    2.751883] Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+[    2.760199] ---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0) ]---
