@@ -24,7 +24,8 @@ Tools Compiled From Source:
 
 ## Target
 BeagleBone Black board https://www.beagleboard.org/boards/beaglebone-black
-Arm Cortex A8 processor
+Arm Cortex-A8 processor 
+ARMv7-A ISA
 
 
 ## Build Environment Setup Steps:
