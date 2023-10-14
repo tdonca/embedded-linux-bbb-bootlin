@@ -7,3 +7,6 @@
 [submodule "kernel/linux"]
 	path = kernel/linux
 	url = https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+[submodule "tinysystem/busybox"]
+	path = tinysystem/busybox
+	url = https://git.busybox.net/busybox

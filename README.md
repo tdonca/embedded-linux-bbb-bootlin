@@ -15,6 +15,8 @@ Ubuntu host tools:
 - python3-distutils python3-dev python3-setuptools
   (u-boot tftp server requirements)
 - tftpd-hpa
+  (networked root filesystem for development)
+- nfs-kernel-server
 
 
 Tools Compiled From Source:
@@ -49,6 +51,7 @@ Toolchain installed at `$HOME/x-tools/arm-training-linux-musleabihf/bin/`
 export PATH="${HOME}/x-tools/arm-training-linux-musleabihf/bin/:${PATH}"
 
 ## U-Boot
+...
 
 ## Linux Kernel
 - Kernel stable git repo: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/
@@ -65,4 +68,27 @@ Starting kernel ...
 [    0.000000] CPU: ARMv7 Processor [413fc082] revision 2 (ARMv7), cr=10c5387d
 [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
 [    0.000000] OF: fdt: Machine model: TI AM335x BeagleBone Black
+```
+
+But throwing kernel panic due to missing root filesystem...
+
+## Root Filesystem
+### Host Config
+Use NFS server to host a remote root filesystem, allowing seamless development  and testing of the target system without any reflashing.
+- modify `/etc/exports` to advertise our hosted root filesystem to NFS clients:
+  ```
+  # NFS Remote Root Filesystem for Bootlin lab kernel development
+  # /path/to/rootfs <client-ip>(options)
+  /home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/tinysystem/nfsroot 192.168.0.100(rw,no_root_squash,no_subtree_check)
+  ```
+- https://linux.die.net/man/5/exports
+- https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/s1-nfs-server-config-exports
+
+### Target Config (U-Boot)
+```
+setenv bootargs root=/dev/nfs ip=192.168.0.100:::::usb0 \
+g_ether.dev_addr=f8:dc:7a:00:00:02 g_ether.host_addr=f8:dc:7a:00:00:01 \
+nfsroot=192.168.0.1:/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/tinysystem/nfsroot, \
+nfsvers=3,tcp rw console=ttyS0,115200n8
+
 ```
