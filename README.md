@@ -1,3 +1,5 @@
+Thank you to Bootlin for invaluable open-source knowledge: https://bootlin.com/training/embedded-linux/ 
+
 # Requirements
 
 ## Host
@@ -138,6 +140,7 @@ https://docs.kernel.org/admin-guide/nfs/nfsroot.html
 - Mount `/proc` virtual filesystem `mount -t proc nodev /proc` (`mount -t type device dir`)
   - https://man7.org/linux/man-pages/man5/proc.5.html
 - Mount `/sys` virtual filesystem `mount -t sysfs nodev /sys`
+  - https://man7.org/linux/man-pages/man5/sysfs.5.html
 
 # TODO:
 - (10/17/23) Fix bootup errors about rcS and "can't access tty" error
