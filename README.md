@@ -17,6 +17,8 @@ Ubuntu host tools:
 - tftpd-hpa
   (networked root filesystem for development)
 - nfs-kernel-server
+  (squashfs filesystem)
+- squashfs-tools
 
 
 Tools Compiled From Source:
@@ -52,12 +54,29 @@ export PATH="${HOME}/x-tools/arm-training-linux-musleabihf/bin/:${PATH}"
 
 ## U-Boot
 ...
+### TFTP Configuration Host
+- install `tftpd-hpa` package
+- configure `/etc/default/tftpd-hpa` to set `TFTP_DIRECTORY="/srv/tftp"`
+- create `/srv/tftp` directory
+- create eth-over-usb connection `nmcli con add type ethernet ifname enxf8dc7a000001 ip4 192.168.0.1/24`
+
+### TFTP Configuration Target
+```
+=> setenv ipaddr 192.168.0.100
+=> setenv serverip 192.168.0.1
+=> setenv ethprime usb_ether
+=> setenv usbnet_devaddr f8:dc:7a:00:00:02
+=> setenv usbnet_hostaddr f8:dc:7a:00:00:01
+=> saveenv
+```
 
 ## Linux Kernel
 - Kernel stable git repo: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/
 - Kernel source browser: https://elixir.bootlin.com/linux/latest/source
 - Configuration for beagle bone black: `omap2plus_defconfig`
 - TI OMAP: https://en.wikipedia.org/wiki/OMAP
+- Compile kernel with `make`
+- Copy `arch/arm/boot/zImage` and `arch/arm/boot/dts/am335x-boneblack.dtb` to `/srv/tftp/`
 
 Successful kernel load: :)
 ```
@@ -73,7 +92,7 @@ Starting kernel ...
 But throwing kernel panic due to missing root filesystem...
 
 ## Root Filesystem
-### Host Config
+### Host Config (not working)
 Use NFS server to host a remote root filesystem, allowing seamless development  and testing of the target system without any reflashing.
 - modify `/etc/exports` to advertise our hosted root filesystem to NFS clients:
   ```
@@ -84,11 +103,41 @@ Use NFS server to host a remote root filesystem, allowing seamless development  
 - https://linux.die.net/man/5/exports
 - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/s1-nfs-server-config-exports
 
-### Target Config (U-Boot)
+### Target Config (U-Boot) (not working)
 ```
-setenv bootargs root=/dev/nfs ip=192.168.0.100:::::usb0 \
-g_ether.dev_addr=f8:dc:7a:00:00:02 g_ether.host_addr=f8:dc:7a:00:00:01 \
-nfsroot=192.168.0.1:/home/tudor/dev/embedded_linux/embedded-linux-bbb-bootlin/tinysystem/nfsroot, \
-nfsvers=3,tcp rw console=ttyS0,115200n8
+setenv bootargs loglevel=8 console=ttyS0,115200n8 root=/dev/nfs nfsroot=192.168.0.1:/srv/nfs rw nfsrootdebug ip=192.168.0.100:102.168.0.1::255.255.255.0::eth0:off
+```
+Example that is supposedly working: 
+`bootargs root=/dev/nfs rw nfsroot=10.0.0.1:/srv/nfs,nolock,vers=4,tcp ip=10.0.0.100::255.255.255.0 rootdelay=10 nfsrootdebug`
+https://discuss.96boards.org/t/hikey-unable-to-mount-root-fs-via-nfs/6878/5
 
-```
+
+https://docs.kernel.org/admin-guide/nfs/nfsroot.html
+
+(Leaving NFS Attempt for Now)
+=======================================================
+
+### Root Filesystem using SD Card
+- Recompile kernel with SquashFS and ext4 enabled
+- copied kernel to SD card
+- create new partitions using `cfdisk /dev/sda`
+- create ext4 filesystem in the data partition using `sudo mkfs.ext4 -L data -E nodiscard /dev/sda3`
+- create squashfs root filesystem in root partition `mksquashfs nfsroot nfsroot.squashfs`
+- copy squashfs image to root partition `sudo dd if=nfsroot.squashfs of=/dev/sda2 bs=1M`
+
+### YU-Boot config to load root filesystem from SD card
+- Kernel command-line parameters: https://docs.kernel.org/admin-guide/kernel-parameters.html
+- set `root=/dev/mmcblk0p2` in `bootargs` variable
+  - `setenv bootargs loglevel=8 console=ttyS0,115200n8 root=/dev/mmcblk0p2 rootfstype=squashfs rw rootwait`
+  - `saveenv`
+- load kernel from SD card boot partition
+  - `setenv bootcmd 'load mmc 0:1 0x81000000 zImage; load mmc 0:1 0x82000000 am335x-boneblack.dtb; bootz 0x81000000 - 0x82000000'` 
+
+
+### Linux Userspace Startup Config
+- Mount `/proc` virtual filesystem `mount -t proc nodev /proc` (`mount -t type device dir`)
+  - https://man7.org/linux/man-pages/man5/proc.5.html
+- Mount `/sys` virtual filesystem `mount -t sysfs nodev /sys`
+
+# TODO:
+- (10/17/23) Fix bootup errors about rcS and "can't access tty" error
